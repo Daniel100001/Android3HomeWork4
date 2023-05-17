@@ -20,7 +20,6 @@ class CharacterAdapter : ListAdapter<CharacterModel, CharacterAdapter.ViewHolder
             binding.itemCharacterName.text = characterModel?.name
             binding.itemCharacterStatus.text = characterModel?.status
             binding.itemCharacterSpecies.text = characterModel?.species
-            binding.itemCharacterNamePro.text = characterModel?.location.toString()
         }
 
     }

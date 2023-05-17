@@ -19,8 +19,6 @@ data class CharacterModel(
     @SerializedName("species")
     val species: String,
 
-    @SerializedName("location")
-    val location: LocationModel
 )
 
 
