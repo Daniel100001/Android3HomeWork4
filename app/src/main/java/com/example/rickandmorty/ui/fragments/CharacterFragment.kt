@@ -43,5 +43,6 @@ class CharacterFragment : Fragment() {
         viewModel?.fetchCharacters()?.observe(viewLifecycleOwner) {
             characterAdapter.submitList(it?.results)
         }
+
     }
 }

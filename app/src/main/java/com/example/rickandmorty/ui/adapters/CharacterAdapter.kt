@@ -2,7 +2,6 @@ package com.example.rickandmorty.ui.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -21,8 +20,9 @@ class CharacterAdapter : ListAdapter<CharacterModel, CharacterAdapter.ViewHolder
             binding.itemCharacterName.text = characterModel?.name
             binding.itemCharacterStatus.text = characterModel?.status
             binding.itemCharacterSpecies.text = characterModel?.species
-            binding.itemCharacterNamePro.text = characterModel?.type
+            binding.itemCharacterNamePro.text = characterModel?.location.toString()
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

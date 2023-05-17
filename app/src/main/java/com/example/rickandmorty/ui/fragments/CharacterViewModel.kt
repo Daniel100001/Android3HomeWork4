@@ -20,7 +20,7 @@ class CharacterViewModel : ViewModel() {
                     call: Call<RickAndMortyResponse<CharacterModel>>,
                     response: Response<RickAndMortyResponse<CharacterModel>>
                 ) {
-                    if(response.body() != null) {
+                    if (response.body() != null) {
                         data.value = response.body()
                     }
                 }
