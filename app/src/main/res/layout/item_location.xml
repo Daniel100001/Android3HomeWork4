@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="dimenssion"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:layout_marginStart="20dp"
         android:elevation="1dp"
         android:layout_marginTop="5dp"

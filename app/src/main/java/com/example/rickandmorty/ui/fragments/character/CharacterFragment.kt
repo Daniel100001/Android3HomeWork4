@@ -15,7 +15,8 @@ import com.example.rickandmorty.ui.fragments.character.detail.CharacterViewModel
 
 class CharacterFragment : Fragment() {
 
-    private lateinit var binding: FragmentCharacterBinding
+    private var _binding: FragmentCharacterBinding? = null
+    private val binding get() = _binding!!
     private val characterAdapter = CharacterAdapter(this::onItemClick)
     private val viewModel by viewModels<CharacterViewModel>()
 
@@ -31,7 +32,7 @@ class CharacterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentCharacterBinding.inflate(inflater, container, false)
+        _binding = FragmentCharacterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
