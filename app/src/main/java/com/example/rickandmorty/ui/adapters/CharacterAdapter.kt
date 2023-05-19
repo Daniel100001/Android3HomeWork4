@@ -9,9 +9,11 @@ import com.bumptech.glide.Glide
 import com.example.rickandmorty.databinding.ItemCharacterBinding
 import com.example.rickandmorty.model.CharacterModel
 
-class CharacterAdapter : ListAdapter<CharacterModel, CharacterAdapter.ViewHolder>(DiffUtilCallback()) {
+class CharacterAdapter(private val onItemClick: (dan: CharacterModel) -> Unit) :
+    ListAdapter<CharacterModel, CharacterAdapter.ViewHolder>(DiffUtilCallback()) {
 
-    class ViewHolder(private val binding: ItemCharacterBinding) :
+
+    inner class ViewHolder(private val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBind(characterModel: CharacterModel?) {
@@ -22,6 +24,11 @@ class CharacterAdapter : ListAdapter<CharacterModel, CharacterAdapter.ViewHolder
             binding.itemCharacterSpecies.text = characterModel?.species
         }
 
+        init {
+            itemView.setOnClickListener {
+                onItemClick(getItem(adapterPosition))
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -41,6 +48,7 @@ class CharacterAdapter : ListAdapter<CharacterModel, CharacterAdapter.ViewHolder
 }
 
 class DiffUtilCallback : DiffUtil.ItemCallback<CharacterModel>() {
+
     override fun areItemsTheSame(oldItem: CharacterModel, newItem: CharacterModel): Boolean {
         return oldItem.id == newItem.id
     }

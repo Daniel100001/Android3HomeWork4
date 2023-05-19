@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.fragments
+package com.example.rickandmorty.ui.fragments.location
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,6 +16,7 @@ class LocationFragmentViewModel : ViewModel() {
 
         App.locationApi?.fetchCharactersLocation()
             ?.enqueue(object : Callback<RickAndMortyResponse<LocationModel>> {
+
                 override fun onResponse(
                     call: Call<RickAndMortyResponse<LocationModel>>,
                     response: Response<RickAndMortyResponse<LocationModel>>

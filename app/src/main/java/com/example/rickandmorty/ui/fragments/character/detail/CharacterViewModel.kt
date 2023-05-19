@@ -1,5 +1,6 @@
-package com.example.rickandmorty.ui.fragments
+package com.example.rickandmorty.ui.fragments.character.detail
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.rickandmorty.App
@@ -11,11 +12,36 @@ import retrofit2.Response
 
 class CharacterViewModel : ViewModel() {
 
+    fun fetchSingleCharacter(id: Int): MutableLiveData<CharacterModel> {
+        val data: MutableLiveData<CharacterModel> = MutableLiveData()
+
+        App.characterApi?.fetchSingleCharacter(id)?.enqueue(object : Callback<CharacterModel> {
+
+            override fun onResponse(
+                call: Call<CharacterModel>,
+                response: Response<CharacterModel>
+            ) {
+                if (response.isSuccessful && response.body() != null) {
+                    data.value = response.body()
+                }
+
+            }
+
+            override fun onFailure(call: Call<CharacterModel>, t: Throwable) {
+                data.value = null
+                Log.e("error", t.localizedMessage ?: "Error")
+            }
+
+        })
+        return data
+    }
+
     fun fetchCharacters(): MutableLiveData<RickAndMortyResponse<CharacterModel>?> {
         val data = MutableLiveData<RickAndMortyResponse<CharacterModel>?>()
 
         App.characterApi?.fetchCharacters()
             ?.enqueue(object : Callback<RickAndMortyResponse<CharacterModel>> {
+
                 override fun onResponse(
                     call: Call<RickAndMortyResponse<CharacterModel>>,
                     response: Response<RickAndMortyResponse<CharacterModel>>

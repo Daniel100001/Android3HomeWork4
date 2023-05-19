@@ -1,4 +1,4 @@
-package com.example.rickandmorty.ui.fragments
+package com.example.rickandmorty.ui.fragments.episode
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -16,6 +16,7 @@ class EpisodeFragmentViewModel : ViewModel() {
 
         App.episodeApi?.fetchEpisode()
             ?.enqueue(object : Callback<RickAndMortyResponse<EpisodeModel>> {
+
                 override fun onResponse(
                     call: Call<RickAndMortyResponse<EpisodeModel>>,
                     response: Response<RickAndMortyResponse<EpisodeModel>>

@@ -3,6 +3,7 @@ package com.example.rickandmorty.model
 import com.google.gson.annotations.SerializedName
 
 data class LocationModel(
+
     @SerializedName("id")
     val id: Int,
 
@@ -14,6 +15,4 @@ data class LocationModel(
 
     @SerializedName("dimension")
     val dimension: String
-
-
 )

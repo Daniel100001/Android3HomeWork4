@@ -19,6 +19,6 @@ data class CharacterModel(
     @SerializedName("species")
     val species: String,
 
-)
+) : java.io.Serializable
 
 

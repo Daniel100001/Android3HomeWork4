@@ -36,13 +36,14 @@ class LocationAdapter : ListAdapter<LocationModel, LocationAdapter.ViewHolder>(D
     }
 
 
-class DiffUtilCallback : DiffUtil.ItemCallback<LocationModel>() {
-    override fun areItemsTheSame(oldItem: LocationModel, newItem: LocationModel): Boolean {
-        return oldItem.id == newItem.id
-    }
+    class DiffUtilCallback : DiffUtil.ItemCallback<LocationModel>() {
 
-    override fun areContentsTheSame(oldItem: LocationModel, newItem: LocationModel): Boolean {
-        return oldItem == newItem
+        override fun areItemsTheSame(oldItem: LocationModel, newItem: LocationModel): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        override fun areContentsTheSame(oldItem: LocationModel, newItem: LocationModel): Boolean {
+            return oldItem == newItem
+        }
     }
-}
 }

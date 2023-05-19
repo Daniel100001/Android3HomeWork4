@@ -1,28 +1,37 @@
-package com.example.rickandmorty.ui.fragments
+package com.example.rickandmorty.ui.fragments.character
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.rickandmorty.databinding.FragmentCharacterBinding
+import com.example.rickandmorty.model.CharacterModel
 import com.example.rickandmorty.ui.adapters.CharacterAdapter
-
+import com.example.rickandmorty.ui.fragments.character.detail.CharacterViewModel
 
 class CharacterFragment : Fragment() {
 
     private lateinit var binding: FragmentCharacterBinding
-    private val characterAdapter = CharacterAdapter()
-    private var viewModel: CharacterViewModel? = null
+    private val characterAdapter = CharacterAdapter(this::onItemClick)
+    private val viewModel by viewModels<CharacterViewModel>()
+
+    private fun onItemClick(args: CharacterModel) {
+        findNavController().navigate(
+            CharacterFragmentDirections.actionCharacterFragmentToCharacterDetailFragment(
+                args
+            )
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentCharacterBinding.inflate(inflater, container, false)
-        viewModel = ViewModelProvider(this)[CharacterViewModel::class.java]
         return binding.root
     }
 
@@ -40,9 +49,8 @@ class CharacterFragment : Fragment() {
     }
 
     private fun setUpObserves() {
-        viewModel?.fetchCharacters()?.observe(viewLifecycleOwner) {
+        viewModel.fetchCharacters().observe(viewLifecycleOwner) {
             characterAdapter.submitList(it?.results)
         }
-
     }
 }

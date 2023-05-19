@@ -9,5 +9,4 @@ interface EpisodeApiService {
 
     @GET("api/episode")
     fun fetchEpisode(): Call<RickAndMortyResponse<EpisodeModel>>
-
 }

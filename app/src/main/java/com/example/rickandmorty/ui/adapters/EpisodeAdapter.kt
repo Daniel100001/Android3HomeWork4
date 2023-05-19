@@ -35,6 +35,7 @@ class EpisodeAdapter : ListAdapter<EpisodeModel, EpisodeAdapter.ViewHolder>(Diff
     }
 
     class DiffUtilCallback : DiffUtil.ItemCallback<EpisodeModel>() {
+
         override fun areItemsTheSame(oldItem: EpisodeModel, newItem: EpisodeModel): Boolean {
             return oldItem.id == newItem.id
         }

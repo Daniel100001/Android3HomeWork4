@@ -16,6 +16,7 @@ class App : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
         val retrofitClient = RetrofitClient()
         characterApi = retrofitClient.provideCharacterApiService()
         locationApi = retrofitClient.provideLocationApiService()

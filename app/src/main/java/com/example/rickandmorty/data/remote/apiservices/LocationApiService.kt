@@ -9,5 +9,4 @@ interface LocationApiService {
 
     @GET("api/location")
     fun fetchCharactersLocation(): Call<RickAndMortyResponse<LocationModel>>
-
 }
