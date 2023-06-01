@@ -1,7 +1,7 @@
 package com.example.rickandmorty.data.remote.apiservices
 
-import com.example.rickandmorty.model.EpisodeModel
-import com.example.rickandmorty.model.RickAndMortyResponse
+import com.example.rickandmorty.models.EpisodeModel
+import com.example.rickandmorty.models.RickAndMortyResponse
 import retrofit2.Call
 import retrofit2.http.GET
 

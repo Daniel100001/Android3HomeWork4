@@ -10,6 +10,7 @@
         android:name="com.example.rickandmorty.ui.fragments.character.CharacterFragment"
         android:label="fragment_character"
         tools:layout="@layout/fragment_character">
+
         <action
             android:id="@+id/action_characterFragment_to_characterDetailFragment"
             app:destination="@id/characterDetailFragment" />
@@ -32,9 +33,20 @@
         android:name="com.example.rickandmorty.ui.fragments.character.detail.CharacterDetailFragment"
         android:label="fragment_character_detail"
         tools:layout="@layout/fragment_character_detail" >
+
         <argument
             android:name="myModel"
-            app:argType="com.example.rickandmorty.model.CharacterModel" />
+            app:argType="com.example.rickandmorty.models.CharacterModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.rickandmorty.ui.fragments.character.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" >
+
+        <action
+            android:id="@+id/action_filterFragment_to_characterFragment"
+            app:destination="@id/characterFragment" />
     </fragment>
 
 </navigation>

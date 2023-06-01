@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.example.rickandmorty.databinding.FragmentCharacterDetailBinding
+import com.example.rickandmorty.ui.fragments.character.CharacterViewModel
 
 class CharacterDetailFragment : Fragment() {
 

@@ -2,6 +2,7 @@ package com.example.rickandmorty.data.remote
 
 import com.example.rickandmorty.data.remote.apiservices.EpisodeApiService
 import com.example.rickandmorty.data.remote.apiservices.CharacterApiService
+import com.example.rickandmorty.data.remote.apiservices.CommentsApiService
 import com.example.rickandmorty.data.remote.apiservices.LocationApiService
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -32,5 +33,8 @@ class RetrofitClient {
 
     fun provideEpisodeApiService(): EpisodeApiService {
         return retrofitClient.create(EpisodeApiService::class.java)
+    }
+    fun provideCommentApiService(): CommentsApiService {
+        return retrofitClient.create(CommentsApiService::class.java)
     }
 }

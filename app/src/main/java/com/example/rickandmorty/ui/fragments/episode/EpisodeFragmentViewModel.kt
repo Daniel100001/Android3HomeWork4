@@ -3,8 +3,8 @@ package com.example.rickandmorty.ui.fragments.episode
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.rickandmorty.App
-import com.example.rickandmorty.model.EpisodeModel
-import com.example.rickandmorty.model.RickAndMortyResponse
+import com.example.rickandmorty.models.EpisodeModel
+import com.example.rickandmorty.models.RickAndMortyResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

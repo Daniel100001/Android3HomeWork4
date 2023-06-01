@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.ItemLocationBinding
-import com.example.rickandmorty.model.LocationModel
+import com.example.rickandmorty.models.LocationModel
 
 class LocationAdapter : ListAdapter<LocationModel, LocationAdapter.ViewHolder>(DiffUtilCallback()) {
 

@@ -1,4 +1,4 @@
-package com.example.rickandmorty.model
+package com.example.rickandmorty.models
 
 import com.google.gson.annotations.SerializedName
 
@@ -18,6 +18,12 @@ data class CharacterModel(
 
     @SerializedName("species")
     val species: String,
+
+    @SerializedName("type")
+    val type: String,
+
+    @SerializedName("gender")
+    val gender: String
 
 ) : java.io.Serializable
 

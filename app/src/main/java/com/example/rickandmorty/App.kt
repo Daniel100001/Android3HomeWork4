@@ -4,6 +4,7 @@ import com.example.rickandmorty.data.remote.apiservices.EpisodeApiService
 import android.app.Application
 import com.example.rickandmorty.data.remote.RetrofitClient
 import com.example.rickandmorty.data.remote.apiservices.CharacterApiService
+import com.example.rickandmorty.data.remote.apiservices.CommentsApiService
 import com.example.rickandmorty.data.remote.apiservices.LocationApiService
 
 class App : Application() {
@@ -12,6 +13,8 @@ class App : Application() {
         var characterApi: CharacterApiService? = null
         var locationApi: LocationApiService? = null
         var episodeApi: EpisodeApiService? = null
+        var commentApi: CommentsApiService? = null
+
     }
 
     override fun onCreate() {
@@ -21,5 +24,7 @@ class App : Application() {
         characterApi = retrofitClient.provideCharacterApiService()
         locationApi = retrofitClient.provideLocationApiService()
         episodeApi= retrofitClient.provideEpisodeApiService()
+        commentApi = retrofitClient.provideCommentApiService()
+
     }
 }

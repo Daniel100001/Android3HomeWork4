@@ -64,12 +64,12 @@
         android:text="Mythological Creature"
         android:textColor="@color/white"
         android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@+id/last_know_location"
+        app:layout_constraintBottom_toTopOf="@+id/type"
         app:layout_constraintStart_toEndOf="@+id/item_character_status"
         app:layout_constraintTop_toTopOf="@+id/materialCardView" />
 
     <TextView
-        android:id="@+id/last_know_location"
+        android:id="@+id/type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -91,10 +91,10 @@
         android:text="Mr. Goldenfold's dream"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/item_character_image"
-        app:layout_constraintTop_toBottomOf="@+id/last_know_location" />
+        app:layout_constraintTop_toBottomOf="@+id/type" />
 
     <TextView
-        android:id="@+id/first_seen_in"
+        android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -113,6 +113,6 @@
         android:text="Lawnmower Dog"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@+id/item_character_image"
-        app:layout_constraintTop_toBottomOf="@id/first_seen_in" />
+        app:layout_constraintTop_toBottomOf="@id/gender" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

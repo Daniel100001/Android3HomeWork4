@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.ItemEpisodeBinding
-import com.example.rickandmorty.model.EpisodeModel
+import com.example.rickandmorty.models.EpisodeModel
 
 class EpisodeAdapter : ListAdapter<EpisodeModel, EpisodeAdapter.ViewHolder>(DiffUtilCallback()) {
 
