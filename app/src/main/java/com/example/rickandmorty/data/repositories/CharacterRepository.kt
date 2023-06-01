@@ -12,15 +12,21 @@ import retrofit2.Response
 class CharacterRepository {
 
     fun fetchCharacter(
-        name : String,
+        name: String,
         status: String,
         species: String,
-        type : String,
+        type: String,
         gender: String,
         onResponse: (data: RickAndMortyResponse<CharacterModel>) -> Unit,
         onFailure: (errorMassage: String) -> Unit
     ) {
-        App.characterApi?.fetchCharacters(name = name,status = status,species = species, type = type, gender = gender)
+        App.characterApi?.fetchCharacters(
+            name = name,
+            status = status,
+            species = species,
+            type = type,
+            gender = gender
+        )
             ?.enqueue(object : Callback<RickAndMortyResponse<CharacterModel>> {
                 override fun onResponse(
                     call: Call<RickAndMortyResponse<CharacterModel>>,

@@ -13,9 +13,9 @@ class EpisodeAdapter : ListAdapter<EpisodeModel, EpisodeAdapter.ViewHolder>(Diff
     class ViewHolder(private val binding: ItemEpisodeBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(episodeModel: EpisodeModel?) {
-            binding.itemCharacterName.text = episodeModel?.name
-            binding.itemLocationEpisode.text = episodeModel?.episode
+        fun onBind(episodeModel: EpisodeModel) {
+            binding.itemCharacterName.text = episodeModel.name
+            binding.itemLocationEpisode.text = episodeModel.episode
         }
     }
 

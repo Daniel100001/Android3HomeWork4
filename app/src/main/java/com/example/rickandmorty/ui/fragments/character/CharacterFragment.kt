@@ -61,7 +61,7 @@ class CharacterFragment : Fragment() {
             val species = bundle.getString("species")
             val type = bundle.getString("type")
             val gender = bundle.getString("gender")
-            viewModel.fetchCharacters(name!!,status!!,species!!,type!!,gender!!)
+            viewModel.fetchCharacters(name!!, status!!, species!!, type!!, gender!!)
         } else {
             Log.e("args", "Bundle is null")
         }
@@ -77,7 +77,7 @@ class CharacterFragment : Fragment() {
     }
 
     private fun setUpListeners() {
-        binding.buttonMore.setOnClickListener{
+        binding.buttonMore.setOnClickListener {
             findNavController().navigate(R.id.filterFragment)
         }
     }

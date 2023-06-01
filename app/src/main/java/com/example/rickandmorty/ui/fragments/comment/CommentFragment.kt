@@ -15,7 +15,7 @@ import com.example.rickandmorty.models.CommentModel
 import com.example.rickandmorty.models.CommentPutModel
 import com.example.rickandmorty.ui.fragments.character.CharacterViewModel
 
-class CommentFragment : Fragment( ){
+class CommentFragment : Fragment() {
 
     private var _binding: FragmentCommentBinding? = null
     private val binding get() = _binding!!

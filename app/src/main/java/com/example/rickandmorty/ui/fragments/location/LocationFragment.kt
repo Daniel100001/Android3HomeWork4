@@ -17,7 +17,6 @@ class LocationFragment : Fragment() {
     private val locationAdapter = LocationAdapter()
     private val viewModel by viewModels<LocationFragmentViewModel>()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,6 +42,5 @@ class LocationFragment : Fragment() {
         viewModel.fetchCharacters().observe(viewLifecycleOwner) {
             locationAdapter.submitList(it?.results)
         }
-
     }
 }

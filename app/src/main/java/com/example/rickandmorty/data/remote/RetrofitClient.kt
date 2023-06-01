@@ -34,6 +34,7 @@ class RetrofitClient {
     fun provideEpisodeApiService(): EpisodeApiService {
         return retrofitClient.create(EpisodeApiService::class.java)
     }
+
     fun provideCommentApiService(): CommentsApiService {
         return retrofitClient.create(CommentsApiService::class.java)
     }

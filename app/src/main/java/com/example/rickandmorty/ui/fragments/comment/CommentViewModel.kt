@@ -12,7 +12,6 @@ import com.example.rickandmorty.models.CommentPutModel
 
 class CommentViewModel : ViewModel() {
 
-    // Этот фрагмент не считаеться
     private val _characterLiveData = MutableLiveData<CommentModel>()
     val commentLiveData: LiveData<CommentModel> get() = _characterLiveData
 

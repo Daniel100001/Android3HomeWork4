@@ -21,12 +21,18 @@ class CharacterViewModel : ViewModel() {
         return characterRepository.fetchSingleCharacter(id)
     }
 
-    fun fetchCharacters(name : String, status : String, species : String, type : String, gender: String) {
+    fun fetchCharacters(
+        name: String,
+        status: String,
+        species: String,
+        type: String,
+        gender: String
+    ) {
         characterRepository.fetchCharacter(
             name = name,
             status = status,
             species = species,
-            type = type ,
+            type = type,
             gender = gender,
             onResponse = { data ->
                 _characterLiveData.value = data
@@ -35,6 +41,5 @@ class CharacterViewModel : ViewModel() {
                 _errorLiveData.value = message
             }
         )
-
     }
 }

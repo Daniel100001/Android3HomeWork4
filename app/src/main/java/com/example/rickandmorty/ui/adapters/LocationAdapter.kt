@@ -35,7 +35,6 @@ class LocationAdapter : ListAdapter<LocationModel, LocationAdapter.ViewHolder>(D
         holder.onBind(getItem(position))
     }
 
-
     class DiffUtilCallback : DiffUtil.ItemCallback<LocationModel>() {
 
         override fun areItemsTheSame(oldItem: LocationModel, newItem: LocationModel): Boolean {

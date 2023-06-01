@@ -15,16 +15,16 @@ class CharacterAdapter(private val onItemClick: (model: CharacterModel) -> Unit)
     inner class ViewHolder(private val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(characterModel: CharacterModel) {
-            Glide.with(binding.itemCharacterImage).load(characterModel.image)
-                .into(binding.itemCharacterImage)
-            binding.itemCharacterName.text = characterModel.name
-        }
-
         init {
             itemView.setOnClickListener {
                 onItemClick(getItem(adapterPosition))
             }
+        }
+
+        fun onBind(characterModel: CharacterModel) {
+            Glide.with(binding.itemCharacterImage).load(characterModel.image)
+                .into(binding.itemCharacterImage)
+            binding.itemCharacterName.text = characterModel.name
         }
     }
 
@@ -42,7 +42,6 @@ class CharacterAdapter(private val onItemClick: (model: CharacterModel) -> Unit)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.onBind(getItem(position))
     }
-
 
     class DiffUtilCallback : DiffUtil.ItemCallback<CharacterModel>() {
 

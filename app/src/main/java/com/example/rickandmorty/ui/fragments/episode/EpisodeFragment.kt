@@ -17,7 +17,6 @@ class EpisodeFragment : Fragment() {
     private val episodeAdapter = EpisodeAdapter()
     private val viewModel by viewModels<EpisodeFragmentViewModel>()
 
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,6 +42,5 @@ class EpisodeFragment : Fragment() {
         viewModel.fetchCharactersEpisode().observe(viewLifecycleOwner) {
             episodeAdapter.submitList(it?.results)
         }
-
     }
 }
